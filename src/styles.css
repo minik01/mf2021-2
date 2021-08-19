@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.login-container {
+  /*width: max(50%, min-content);*/
+  height: max(200px, 50%);
+  margin: auto;
+  width: 50%;
+}
+
+a.btn {
+  display: inline-block;
+  padding: 1rem;
+  margin: 1px;
+  background: darkorchid;
+  color: beige;
+  font-size: large;
+}
+
+button.google-login {
+  background: white;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+}
