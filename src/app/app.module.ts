@@ -11,9 +11,11 @@ import {MatTabsModule} from '@angular/material/tabs';
 
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFireStorageModule, BUCKET} from '@angular/fire/storage';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import { LoginComponent } from './login/login.component';
+import {FormsModule} from '@angular/forms';
+import { PlayerComponent } from './player/player.component';
 
 
 const config = {
@@ -22,7 +24,7 @@ const config = {
   projectId: 'mf2021-dw',
   storageBucket: 'mf2021-dw.appspot.com',
   messagingSenderId: '829472028067',
-  appId: '1:829472028067:web:65ee16acdd60f8d41dd616'
+  appId: '1:829472028067:web:65ee16acdd60f8d41dd616',
 };
 
 @NgModule({
@@ -30,7 +32,8 @@ const config = {
     AppComponent,
     EventPlanComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +44,13 @@ const config = {
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
-    AngularFireStorageModule // storage
+    AngularFireStorageModule,
+    FormsModule,
+    // storage
   ],
-  providers: [],
+  providers: [
+    { provide: BUCKET, useValue: 'mf2021-dw.appspot.com' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

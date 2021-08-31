@@ -16,6 +16,13 @@ body {
   width: 50%;
 }
 
+.workspace-container {
+  /*width: max(50%, min-content);*/
+  height: max(200px, 50%);
+  margin: auto;
+  width: max(50%, 640px);
+}
+
 a.btn {
   display: inline-block;
   padding: 1rem;

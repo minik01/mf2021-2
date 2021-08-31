@@ -1,3 +1,13 @@
 Witaj {{userService.userName}}!
 
 <button (click)="authService.logout()">Wyloguj z {{userService.userEmail}}</button>
+
+
+<mat-card class="workspace-container">
+  <div *ngIf="!userService.userId">
+    Aby oglądać transmisję, wpisz numer uczestnika:
+    <input type="text" #userIdInput>
+    <button (click)="sendUserId()">dodaj numer</button>
+  </div>
+
+</mat-card>
